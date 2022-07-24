@@ -1,5 +1,9 @@
 # Robotic-vehicle-software-tutorial
 
+Hello! Simulating robotic vehicle (RV) software is straightforward. <br>
+However, it is not easy to precisely manipulate RVs on simulators when you especially want to simulate cyber/physical attacks/defense. <br>
+I will keep sharing how I run RV software on simulators. <br>
+
 ## Download and Setup
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#1-download-and-setup" target="_blank"> ArduPilot </a>
 <br>
