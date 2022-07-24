@@ -86,6 +86,6 @@ param set SIM_SONAR_RND 3
 
 ### 3-8. GPS
 ```
-param set SIM_GPS1_NOISE 3
+param set SIM_GPS_NOISE 3
 param set SIM_GPS2_NOISE 3
 ```
