@@ -72,6 +72,7 @@ param set SIM_BARO3_RND 3
 ### 3-5. Optical flow sensor
 ```
 param set SIM_FLOW_RND 3
+param set SIM_FLOW_DELAY 3
 ```
 
 ### 3-6. Magnetometer sensor
