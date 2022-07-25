@@ -85,6 +85,14 @@ param set SIM_SONAR_RND 3
 ```
 
 ### 3-8. GPS
+You need to set 'SIM_GPS_TYPE' parameter (controling how GPS is used) before adding GPS noise. <br>
+<br>
+SIM_GPS_TYPE:
+- 0: Use 3D velocity & 2D position from GPS
+- 1: Use 2D velocity & 2D position (GPS velocity does not contribute to altitude estimate)
+- 2: Use 2D position
+- 3: No GPS (will use optical flow only if available)
+
 ```
 param set SIM_GPS_NOISE 3 # Add noise
 param set SIM_GPS2_NOISE 3
