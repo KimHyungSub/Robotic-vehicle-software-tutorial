@@ -88,4 +88,12 @@ param set SIM_SONAR_RND 3
 ```
 param set SIM_GPS_NOISE 3
 param set SIM_GPS2_NOISE 3
+
+param set SIM_GPS_VERR_X 3
+param set SIM_GPS_VERR_Y 3
+param set SIM_GPS_VERR_Z 3
+
+param set SIM_GPS2_VERR_X 3
+param set SIM_GPS2_VERR_Y 3
+param set SIM_GPS2_VERR_Z 3
 ```
