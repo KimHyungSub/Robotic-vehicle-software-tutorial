@@ -86,10 +86,10 @@ param set SIM_SONAR_RND 3
 
 ### 3-8. GPS
 ```
-param set SIM_GPS_NOISE 3
+param set SIM_GPS_NOISE 3 # Add noise
 param set SIM_GPS2_NOISE 3
 
-param set SIM_GPS_VERR_X 3
+param set SIM_GPS_VERR_X 3 # Add velocity errors
 param set SIM_GPS_VERR_Y 3
 param set SIM_GPS_VERR_Z 3
 
