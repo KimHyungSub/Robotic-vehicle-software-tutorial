@@ -197,7 +197,7 @@ You need to change a code line in <a href="https://github.com/ArduPilot/ardupilo
 # Original code line
 time_now_us(0),
 
-# Modify the code line as follows, which lead to system time wrap after 60 seconds
+# Modify the code line as follows, which leads to system time wrap after 60 seconds
 time_now_us(4294900000ULL * 1000ULL),
 ```
 Q. What is the purpose of the changed time clock? <br>
