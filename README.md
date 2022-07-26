@@ -1,6 +1,6 @@
 # Robotic-vehicle-software-tutorial
 
-Hello! It is not straightforward to precisely manipulate RVs on simulators when you especially want to simulate cyber/physical attacks/defense. <br>
+Hello! It is not straightforward to precisely manipulate RVs on simulators when you especially want to simulate cyber-physical attacks/defense. <br>
 I will keep sharing how I run RV software on simulators. <br>
 
 ## 1. Download and Setup
