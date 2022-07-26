@@ -18,6 +18,8 @@ I will keep sharing how I run RV software on simulators. <br>
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#3-injecting-sensor-noise" target="_blank"> Injecting sensor noise</a>
 <br>
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#4-leveraging-an-optical-flow-sensor" target="_blank"> Leveraging an optical flow sensor</a>
+<br>
+<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#5-testing-object-avoidance-algorithms" target="_blank"> Testing object avoidance algorithms</a>
 
 ### 3-2. PX4
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#3-injecting-sensor-noise-in-gazebo-simulation" target="_blank"> Injecting sensor noise</a> 
