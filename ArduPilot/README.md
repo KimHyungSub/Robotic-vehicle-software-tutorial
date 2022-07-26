@@ -164,3 +164,14 @@ param set EK2_GPS_TYPE 3
 # Stop to use GPS data when you fly a drone on a simulator
 param set SIM_GPS_TYPE 3 
 ```
+
+### 4-5. Running Gazebo simulator to test the optical flow sensor
+Open Terminal 1
+```
+gazebo --verbose ~/ardupilot_gazebo/worlds/iris_arducopter_runway.world
+```
+
+Open Terminal 2
+```
+./Tools/autotest/sim_vehicle.py -v ArduCopter -f gazebo-iris
+```
