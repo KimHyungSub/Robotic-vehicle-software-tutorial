@@ -175,3 +175,17 @@ Open Terminal 2
 ```
 ./Tools/autotest/sim_vehicle.py -v ArduCopter -f gazebo-iris
 ```
+
+## 5. Testing object avoidance algorithms
+```
+param set AVOID_ENABLE 7
+param set FENCE_ENABLE 1
+param set FENCE_RADIUS 10000
+param set OA_TYPE 2
+param set OA_MARGIN_MAX 10
+```
+By setting OA_TYPE parameter, you can choose the object avoidance algorithm.
+- 0:	Disabled
+- 1:	BendyRuler
+- 2:	Dijkstra
+- 3:	Dijkstra with BendyRuler
