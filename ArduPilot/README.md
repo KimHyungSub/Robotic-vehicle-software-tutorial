@@ -106,3 +106,61 @@ param set SIM_GPS2_VERR_X 3
 param set SIM_GPS2_VERR_Y 3
 param set SIM_GPS2_VERR_Z 3
 ```
+
+## 4. Leveraging an optical flow sensor 
+### 4-1. Adding a rangefinder sensor
+```
+param set SIM_SONAR_SCALE 10
+param set RNGFND1_TYPE 1
+param set RNGFND1_SCALING 10
+param set RNGFND1_PIN 0
+param set RNGFND1_MAX_CM 5000
+param set RNGFND1_MIN_CM 0
+
+module load graph
+graph RANGEFINDER.distance # You can check measured distances.
+```
+
+### 4-2. Adding an optical flow sensor
+```
+param set SIM_FLOW_ENABLE 1
+param set FLOW_TYPE 10
+
+module load graph
+graph OPTICAL_FLOW.flow_comp_m_x OPTICAL_FLOW.flow_comp_m_y # You can check measured (x, y) positions.
+```
+
+### 4-3. Parameter setting for fusing optical flow sensor data
+If you use EKF version 3, 
+```
+param set EK3_SRC1_VELXY 5 # Velocity Horizontal Source
+param set EK3_SRC1_POSXY 0 # Position Horizontal Source
+param set EK3_SRC_OPTIONS 0
+param set EK3_SRC1_POSZ 1
+param set EK3_SRC1_VELZ 0
+param set EK3_SRC1_YAW 1
+```
+
+If you use EKF version 2, 
+```
+param set EK2_SRC1_VELXY 5
+param set EK2_SRC1_POSXY 0
+param set EK2_SRC_OPTIONS 0
+param set EK2_SRC1_POSZ 1
+param set EK2_SRC1_VELZ 0
+param set EK2_SRC1_YAW 1
+```
+
+### 4-4. Controling sensor fusion source
+By setting EK2_GPS_TYPE/SIM_GPS_TYPE parameters, you can decide whether ArduPilot uses (i) GPS and optical flow data or (ii) just optical flow. <br>
+- 0:	GPS 3D Vel and 2D Pos
+- 1:	GPS 2D vel and 2D pos
+- 2:	GPS 2D pos
+- 3:	No GPS
+```
+# Stop to use GPS data when you fly a real drone
+param set EK2_GPS_TYPE 3 
+
+# Stop to use GPS data when you fly a drone on a simulator
+param set SIM_GPS_TYPE 3 
+```
