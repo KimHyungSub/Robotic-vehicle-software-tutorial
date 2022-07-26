@@ -92,3 +92,19 @@ gyroscope_bias_[i] = phi_g_d * gyroscope_bias_[i] +
 
 Q. Why should we modify PX4 source code to add noise? Is there any more easy way (e.g., changing configuration parameters)?<br>
 A. Unfortunately no because PX4's failure injection is broken. <br>
+
+## 4. Leveraging an optical flow sensor
+```
+cd [PX4 source folder]
+make px4_sitl gazebo_iris_opt_flow
+```
+You can configure EKF2_AID_MASK parameter to control sensor fusion sources. <br>
+- 0: use GPS
+- 1: use optical flow
+- 2: inhibit IMU bias estimation
+- 3: vision position fusion
+- 4: vision yaw fusion
+- 5: multi-rotor drag fusion
+- 6: rotate external vision
+- 7: GPS yaw fusion
+- 8: vision velocity fusion
