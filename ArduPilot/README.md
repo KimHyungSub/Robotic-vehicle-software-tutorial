@@ -189,3 +189,16 @@ By setting OA_TYPE parameter, you can choose the object avoidance algorithm.
 - 1:	BendyRuler
 - 2:	Dijkstra
 - 3:	Dijkstra with BendyRuler
+
+## 6. How to change the start time clock (timestamp)?
+You need to change a code line in <a href="https://github.com/ArduPilot/ardupilot/blob/15cef55e97daf6800b6a7dbd82ff1994a86c6d4a/libraries/SITL/SIM_Aircraft.cpp#L53" target="_blank">here</a>.
+
+```
+# Original code line
+time_now_us(0),
+
+# Modify the code line as follows, which lead to system time wrap after 60 seconds
+time_now_us(4294900000ULL * 1000ULL),
+```
+Q. What is the purpose of the changed time clock?
+A. In case of me, it was useful to test <a href="https://ardupilot.org/mavproxy/docs/modules/signing.html" target="_blank">MAVLink 2.0 Packet Signing</a>.
