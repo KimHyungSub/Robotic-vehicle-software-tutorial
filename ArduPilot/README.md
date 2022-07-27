@@ -11,6 +11,9 @@ CD ArduPilot
 git checkout [commit hash]
 git submodule update --init --recursive
 
+# If the command above fails to load submodule, you can try to use *https* instead of *git*.
+git config --global url."https://".insteadOf git://
+
 Tools/environment_install/install-prereqs-ubuntu.sh -y
 . ~/.profile
 ```
