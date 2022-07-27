@@ -109,10 +109,9 @@ param set SIM_GPS2_VERR_X 3
 param set SIM_GPS2_VERR_Y 3
 param set SIM_GPS2_VERR_Z 3
 
-# For old version (e.g., Copter 3.5.1)
-param set SIM_GPS_GLITCH_X 3
-param set SIM_GPS_GLITCH_Y 3
-param set SIM_GPS_GLITCH_Z 3
+param set SIM_GPS_GLITCH_X 0.001
+param set SIM_GPS_GLITCH_Y 0.001
+param set SIM_GPS_GLITCH_Z 0.001
 ```
 
 ## 4. Leveraging an optical flow sensor 
