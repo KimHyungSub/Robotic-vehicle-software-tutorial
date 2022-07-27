@@ -29,6 +29,8 @@ I will keep sharing how I run RV software on simulators. <br>
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#4-leveraging-an-optical-flow-sensor" target="_blank"> Leveraging an optical flow sensor</a> 
 
 ### 3-3. Ground Control Station (GCS) Software
+
+#### 3-3-1. Installing QGroundControl 
 When your operating system is Ubuntu 20.04 (or later version), <br>
 ```
 sudo usermod -a -G dialout $USER
