@@ -44,3 +44,8 @@ Download <a href="https://d176tv9ibo4jno.cloudfront.net/latest/QGroundControl.Ap
 
 When your operating system is Ubuntu 16.04, <br>
 Download <a href="https://github.com/mavlink/qgroundcontrol/releases/download/v3.5.6/QGroundControl.AppImage" target="_blank">QGroundControl v3.5.6 </a>
+
+```
+chmod +x ./QGroundControl.AppImage
+./QGroundControl.AppImage  (or double click)
+```
