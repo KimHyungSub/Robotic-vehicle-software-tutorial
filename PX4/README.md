@@ -110,3 +110,57 @@ You can configure EKF2_AID_MASK parameter to control sensor fusion sources. <br>
 - 6: rotate external vision
 - 7: GPS yaw fusion
 - 8: vision velocity fusion
+
+
+## Troubleshooting
+### No package 'eigen3' found
+```
+sudo apt-add-repository universe
+sudo apt-get install libeigen3-dev
+```
+
+### open cv
+#### Installing required build dependencies
+```
+sudo apt-get install cmake
+sudo apt-get install gcc g++
+
+sudo apt-get install python-dev python-numpy
+sudo apt-get install python3-dev python3-numpy
+
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
+sudo apt-get install libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
+
+sudo apt-get install libgtk2.0-dev
+sudo apt-get install libgtk-3-dev
+
+sudo apt-get install libpng-dev
+sudo apt-get install libjpeg-dev
+sudo apt-get install libopenexr-dev
+sudo apt-get install libtiff-dev
+sudo apt-get install libwebp-dev
+```
+
+#### Downloading and installing OpenCV
+```
+sudo apt-get install git
+git clone https://github.com/opencv/opencv.git
+
+mkdir build
+cd build
+
+cmake ../
+make
+sudo make install
+```
+
+#### Verifying the installation
+```
+python -c "import cv2; print(cv2.__version__)"
+python3 -c "import cv2; print(cv2.__version__)"
+```
+```
+Output
+4.6.0-dev
+3.2.0
+```
