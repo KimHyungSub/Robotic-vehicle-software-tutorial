@@ -12,6 +12,8 @@ git submodule update --init --recursive
 ## 2. Execute PX4 with Gazebo simulator
 ### 2-1. Quadrotor	
 ```
+make clean
+make distclean
 make px4_sitl gazebo
 ```
 
