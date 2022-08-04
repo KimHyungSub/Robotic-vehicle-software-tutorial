@@ -119,7 +119,7 @@ sudo apt-add-repository universe
 sudo apt-get install libeigen3-dev
 ```
 
-### open cv
+### Could not find a package configuration file provided by "OpenCV"
 #### Installing required build dependencies
 ```
 sudo apt-get install cmake
