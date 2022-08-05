@@ -7,11 +7,15 @@ I will keep sharing how I run RV software on simulators. <br>
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#1-download-and-setup" target="_blank"> ArduPilot </a>
 <br>
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#1-download-and-setup" target="_blank"> PX4 </a>
+<br>
+<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/paparazzi#1-quickstart-for-ubuntu-users" target="_blank"> Paparazzi </a>
 
 ## 2. Execute control software
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#2-execute-ardupilot" target="_blank"> ArduPilot </a>
 <br>
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#2-execute-px4-with-gazebo-simulator" target="_blank"> PX4 </a>
+<br>
+<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/paparazzi#2-2-compilation-and-demo-simulation" target="_blank"> Paparazzi </a>
 
 ## 3. Tutorials
 ### 3-1. ArduPilot
