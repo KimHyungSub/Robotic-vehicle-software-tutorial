@@ -10,6 +10,15 @@ git submodule update --init --recursive
 ```
 
 ## 2. Execute PX4 with Gazebo simulator
+### Takeoff position in the simulator
+The default starting position is Zurich Irchel Park (lat: 47.397742, lon: 8.545594, alt: 488.0).<br>
+The takeoff location in SITL Gazebo can be set using environment variables. <br>
+```
+export PX4_HOME_LAT=28.452386
+export PX4_HOME_LON=-13.867138
+export PX4_HOME_ALT=28.5
+```
+
 ### 2-1. Quadrotor	
 ```
 make clean
@@ -111,8 +120,7 @@ You can configure EKF2_AID_MASK parameter to control sensor fusion sources. <br>
 - 7: GPS yaw fusion
 - 8: vision velocity fusion
 
-
-## Troubleshooting
+## 5. Troubleshooting
 ### No package 'eigen3' found
 ```
 sudo apt-add-repository universe
