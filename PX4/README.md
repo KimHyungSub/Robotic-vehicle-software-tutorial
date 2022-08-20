@@ -121,13 +121,13 @@ You can configure EKF2_AID_MASK parameter to control sensor fusion sources. <br>
 - 8: vision velocity fusion
 
 ## 5. Troubleshooting
-### No package 'eigen3' found
+### 5-1. No package 'eigen3' found
 ```
 sudo apt-add-repository universe
 sudo apt-get install libeigen3-dev
 ```
 
-### Could not find a package configuration file provided by "OpenCV"
+### 5-2. Could not find a package configuration file provided by "OpenCV"
 #### Installing required build dependencies
 ```
 sudo apt-get install cmake
@@ -172,7 +172,7 @@ Output
 4.6.0-dev
 3.2.0
 ```
-### Failed to import jinja2: No module named 'jinja2'
+### 5-3. Failed to import jinja2: No module named 'jinja2'
 ```
 sudo apt remove python-jinja2
 sudo apt remove python3-jinja2
