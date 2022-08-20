@@ -172,3 +172,10 @@ Output
 4.6.0-dev
 3.2.0
 ```
+### Failed to import jinja2: No module named 'jinja2'
+```
+sudo apt remove python-jinja2
+sudo apt remove python3-jinja2
+
+pip3 install --user jinja2
+```
