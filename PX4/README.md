@@ -144,6 +144,8 @@ sudo make run
 
 ### 5-4. Open QGC and enjoy!
 
+### 5-5. Flying Crazyflie 2.1
+Altitude mode works well and is supported by the current setup.
 
 ## 6. Troubleshooting
 ### 6-1. No package 'eigen3' found
