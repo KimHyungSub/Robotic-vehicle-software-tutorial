@@ -120,14 +120,39 @@ You can configure EKF2_AID_MASK parameter to control sensor fusion sources. <br>
 - 7: GPS yaw fusion
 - 8: vision velocity fusion
 
-## 5. Troubleshooting
-### 5-1. No package 'eigen3' found
+## 5. Deploying PX4 v.1.13.0 into Crazyflie 2.1
+### 5-1. Build PX4
+```
+git clone https://github.com/PX4/PX4-Autopilot.git PX4
+CD PX4 
+git checkout 6823cbc4140e29568f00e1211ae60e057adb1a1f 
+git submodule update --init --recursive
+```
+
+### 5-2. Upload firmware into Crazyflie 2.1
+```
+make bitcraze_crazyflie21_default upload
+```
+
+### 5-3. Build cfbridge for Crazyradio PA
+```
+git clone https://github.com/dennisss/cfbridge.git
+git submodule update --init
+make build
+sudo make run
+```
+
+### 5-4. Open QGC and enjoy!
+
+
+## 6. Troubleshooting
+### 6-1. No package 'eigen3' found
 ```
 sudo apt-add-repository universe
 sudo apt-get install libeigen3-dev
 ```
 
-### 5-2. Could not find a package configuration file provided by "OpenCV"
+### 6-2. Could not find a package configuration file provided by "OpenCV"
 #### Installing required build dependencies
 ```
 sudo apt-get install cmake
@@ -172,7 +197,7 @@ Output
 4.6.0-dev
 3.2.0
 ```
-### 5-3. Failed to import jinja2: No module named 'jinja2'
+### 6-3. Failed to import jinja2: No module named 'jinja2'
 ```
 sudo apt remove python-jinja2
 sudo apt remove python3-jinja2
