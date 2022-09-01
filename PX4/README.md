@@ -12,6 +12,22 @@ Running jMAVSim with SITL to ensure that the simulation prerequisites are instal
 ```
 make px4_sitl_default jmavsim 
 ```
+
+If you use Java 11 version, you need to fall back to Java 8.
+```
+sudo apt install openjdk-8-jdk
+sudo update-alternatives --config java # choose 8
+rm -rf Tools/jMAVSim/out
+```
+```
+sudo gedit /etc/java-8-openjdk/accessibility.properties
+```
+and comment out the following line like this:
+```
+#assistive_technologies=org.GNOME.Acessibility.AtkWrapper
+```
+
+
 ## 2. Execute PX4 with Gazebo simulator
 ### Takeoff position in the simulator
 The default starting position is Zurich Irchel Park (lat: 47.397742, lon: 8.545594, alt: 488.0).<br>
