@@ -209,3 +209,8 @@ sudo apt remove python3-jinja2
 
 pip3 install --user jinja2
 ```
+
+### 6-4. CMake Error: The following variables are used in this project, but they are set to NOTFOUND
+```
+sudo apt-get install libgstreamer-plugins-base1.0-dev
+```
