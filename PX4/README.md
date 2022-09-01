@@ -8,7 +8,10 @@ git checkout [commit hash]
 git submodule update --init --recursive
 ./Tools/setup/ubuntu.sh -y
 ```
-
+Running jMAVSim with SITL to ensure that the simulation prerequisites are installed on the system
+```
+make px4_sitl_default jmavsim 
+```
 ## 2. Execute PX4 with Gazebo simulator
 ### Takeoff position in the simulator
 The default starting position is Zurich Irchel Park (lat: 47.397742, lon: 8.545594, alt: 488.0).<br>
