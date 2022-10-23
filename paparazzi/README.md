@@ -31,3 +31,21 @@ make
 - When the compilation is finished, select "Simulation" from the upper-right session combo box and click "Execute". <br>
 - In the GCS, wait about 10s for the aircraft to be in the "Holding point" navigation block. <br>
 - Switch to the "Takeoff" block (lower-left blue airway button in the strip). Takeoff with the green launch button. <br>
+
+## 3. Simulating sensor attacks
+### 3-1. Adding gyro noise
+```
+cd [paparazzi root folder]
+vim ./sw/simulator/nps/nps_sensor_gyro.c
+```
+Changing 'bias_initial' and 'bias_random_walk_std_dev'
+For example, you can add 30 degrees of noise as follows.
+```
+VECT3_ASSIGN(gyro->bias_initial,
+               RadOfDeg(30), RadOfDeg(30), RadOfDeg(30));
+...
+VECT3_ASSIGN(gyro->bias_random_walk_std_dev,
+               RadOfDeg(30),
+               RadOfDeg(30),
+               RadOfDeg(30));
+```
