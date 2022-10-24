@@ -123,7 +123,7 @@ param set INS_HNTCH_ENABLE 0
 ```
 
 ### 4-2. Turning off Low Pass filter
-Comment out the code line below in <a href="https://github.com/ArduPilot/ardupilot/blob/3521090dd5d5a5f5345d3cf437d9657f7b00630e/libraries/AP_InertialSensor/AP_InertialSensor_Backend.cpp#L209" target="_blank">here</a>
+Comment out the code line below (<a href="https://github.com/ArduPilot/ardupilot/blob/3521090dd5d5a5f5345d3cf437d9657f7b00630e/libraries/AP_InertialSensor/AP_InertialSensor_Backend.cpp#L209" target="_blank">here</a>)
 ```
 // apply the low pass filter last to attentuate any notch induced noise
         gyro_filtered = _imu._gyro_filter[instance].apply(gyro_filtered);
