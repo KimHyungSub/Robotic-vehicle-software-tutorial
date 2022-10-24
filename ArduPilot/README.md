@@ -114,8 +114,23 @@ param set SIM_GPS_GLITCH_Y 0.0002
 param set SIM_GPS_GLITCH_Z 0.0002
 ```
 
-## 4. Leveraging an optical flow sensor 
-### 4-1. Adding a rangefinder sensor
+## 4. Turning off filters
+This is useful when you want to measure each filter's effect and performance.
+
+### 4-1. Turning off Harmonic Notch filter
+```
+param set INS_HNTCH_ENABLE 0
+```
+
+### 4-2. Turning off Low Pass filter
+Comment out the code line below in <a href="https://github.com/ArduPilot/ardupilot/blob/3521090dd5d5a5f5345d3cf437d9657f7b00630e/libraries/AP_InertialSensor/AP_InertialSensor_Backend.cpp#L209" target="_blank">here</a>
+```
+// apply the low pass filter last to attentuate any notch induced noise
+        gyro_filtered = _imu._gyro_filter[instance].apply(gyro_filtered);
+```
+
+## 5. Leveraging an optical flow sensor 
+### 5-1. Adding a rangefinder sensor
 ```
 param set SIM_SONAR_SCALE 10
 param set RNGFND1_TYPE 1
@@ -128,7 +143,7 @@ module load graph
 graph RANGEFINDER.distance # You can check measured distances.
 ```
 
-### 4-2. Adding an optical flow sensor
+### 5-2. Adding an optical flow sensor
 ```
 param set SIM_FLOW_ENABLE 1
 param set FLOW_TYPE 10
@@ -137,7 +152,7 @@ module load graph
 graph OPTICAL_FLOW.flow_comp_m_x OPTICAL_FLOW.flow_comp_m_y # You can check measured (x, y) positions.
 ```
 
-### 4-3. Parameter setting for fusing optical flow sensor data
+### 5-3. Parameter setting for fusing optical flow sensor data
 If you use EKF version 3, 
 ```
 param set EK3_SRC1_VELXY 5 # Velocity Horizontal Source
@@ -158,7 +173,7 @@ param set EK2_SRC1_VELZ 0
 param set EK2_SRC1_YAW 1
 ```
 
-### 4-4. Controling sensor fusion source
+### 5-4. Controling sensor fusion source
 By setting EK2_GPS_TYPE/SIM_GPS_TYPE parameters, you can decide whether ArduPilot uses (i) GPS and optical flow data or (ii) just optical flow. <br>
 - 0:	GPS 3D Vel and 2D Pos
 - 1:	GPS 2D vel and 2D pos
@@ -172,7 +187,7 @@ param set EK2_GPS_TYPE 3
 param set SIM_GPS_TYPE 3 
 ```
 
-### 4-5. Running Gazebo simulator to test the optical flow sensor
+### 5-5. Running Gazebo simulator to test the optical flow sensor
 Open Terminal 1
 ```
 gazebo --verbose ~/ardupilot_gazebo/worlds/iris_arducopter_runway.world
@@ -183,7 +198,7 @@ Open Terminal 2
 ./Tools/autotest/sim_vehicle.py -v ArduCopter -f gazebo-iris
 ```
 
-## 5. Testing object avoidance algorithms
+## 6. Testing object avoidance algorithms
 ```
 param set AVOID_ENABLE 7
 param set FENCE_ENABLE 1
@@ -197,8 +212,8 @@ By setting OA_TYPE parameter, you can choose the object avoidance algorithm.
 - 2:	Dijkstra
 - 3:	Dijkstra with BendyRuler
 
-## 6. How to change the start time clock (timestamp)?
-You need to change a code line in <a href="https://github.com/ArduPilot/ardupilot/blob/15cef55e97daf6800b6a7dbd82ff1994a86c6d4a/libraries/SITL/SIM_Aircraft.cpp#L53" target="_blank">here</a>.
+## 7. How to change the start time clock (timestamp)?
+You need to change a code line (<a href="https://github.com/ArduPilot/ardupilot/blob/15cef55e97daf6800b6a7dbd82ff1994a86c6d4a/libraries/SITL/SIM_Aircraft.cpp#L53" target="_blank">here</a>).
 
 ```
 # Original code line
