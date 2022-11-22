@@ -45,6 +45,7 @@ Open a new command window (Terminal 2)
 
 ## 3. Injecting sensor noise 
 ### 3-1. Gyro sensor
+<a href="https://github.com/ArduPilot/ardupilot/blob/fe10f15e179054ff2cb48177eab195a509badc8b/libraries/AP_InertialSensor/AP_InertialSensor_SITL.cpp#L227" target="_blank">Source code</a>
 ```
 param set SIM_GYR1_RND 3
 param set SIM_GYR2_RND 3
