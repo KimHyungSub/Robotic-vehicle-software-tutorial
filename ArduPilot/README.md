@@ -98,6 +98,7 @@ SIM_GPS_TYPE:
 - 2: Use 2D position
 - 3: No GPS (will use optical flow only if available)
 
+Changing parameters below triggers GPS glitch fail-safe logic on a software version (d0210f7b8930dc336e7de2c09dfe2029290f596b).
 ```
 param set SIM_GPS_NOISE 3 # Add noise
 param set SIM_GPS2_NOISE 3
@@ -113,6 +114,24 @@ param set SIM_GPS2_VERR_Z 3
 param set SIM_GPS_GLITCH_X 0.0002
 param set SIM_GPS_GLITCH_Y 0.0002
 param set SIM_GPS_GLITCH_Z 0.0002
+```
+
+Changing parameters below does not trigger GPS glitch fail-safe logic on a software version (d0210f7b8930dc336e7de2c09dfe2029290f596b).
+```
+param set SIM_GPS_NOISE 1 # Add noise
+param set SIM_GPS2_NOISE 1
+
+param set SIM_GPS_VERR_X 1 # Add velocity errors
+param set SIM_GPS_VERR_Y 1
+param set SIM_GPS_VERR_Z 1
+
+param set SIM_GPS2_VERR_X 1
+param set SIM_GPS2_VERR_Y 1
+param set SIM_GPS2_VERR_Z 1
+
+param set SIM_GPS_GLITCH_X 0.00001
+param set SIM_GPS_GLITCH_Y 0.00001
+param set SIM_GPS_GLITCH_Z 0.00001
 ```
 
 ## 4. Turning off filters
