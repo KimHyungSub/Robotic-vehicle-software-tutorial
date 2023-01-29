@@ -55,3 +55,23 @@ Download <a href="https://github.com/mavlink/qgroundcontrol/releases/download/v3
 chmod +x ./QGroundControl.AppImage
 ./QGroundControl.AppImage  (or double click)
 ```
+#### 3-3-2. Installing Mission Planner on Ubuntu 20.04
+Install dependecies <br>
+```
+sudo apt install mono-runtime libmono-system-windows-forms4.0-cil libmono-system-core4.0-cil libmono-system-management4.0-cil libmono-system-xml-linq4.0-cil
+```
+
+Install mono <br>
+```
+sudo apt install mono-complete
+```
+Get the lastest zipped version of Mission Planner (e.g., <a href="https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.zip">link</a>) <br>
+
+Unzip in the directory you want <br>
+
+Go into the directory <br>
+
+Run Mission Planner with mono <br>
+```
+mono MissionPlanner.exe
+```
