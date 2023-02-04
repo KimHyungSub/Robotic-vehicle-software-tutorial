@@ -121,7 +121,7 @@ gyroscope_bias_[i] = phi_g_d * gyroscope_bias_[i] +
 ```
 
 Q. Why should we modify PX4 source code to add noise? Is there any more easy way (e.g., changing configuration parameters)?<br>
-A. Unfortunately no because PX4's failure injection is broken. <br>
+A. Unfortunately, PX4's failure injection is broken. <br>
 
 ## 4. Leveraging an optical flow sensor
 ```
