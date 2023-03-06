@@ -135,6 +135,22 @@ param set SIM_GPS_GLITCH_X 0.00001
 param set SIM_GPS_GLITCH_Y 0.00001
 param set SIM_GPS_GLITCH_Z 0.00001
 ```
+### 3-9. EMI Signal Injection Attack
+Reference: Paralyzing Drones via EMI Signal Injection on Sensory Communication Channels, NDSS'23
+
+Turning off all sensors
+```
+param set GYR_FAIL_MSK 1
+param set SIM_ACCEL1_FAIL 1
+param set SIM_ACCEL2_FAIL 1
+param set SIM_ACCEL3_FAIL 1
+param set SIM_BARO_DISABLE 1
+param set SIM_MAG1_FAIL 1
+param set SIM_MAG2_FAIL 1
+param set SIM_MAG3_FAIL 1
+param set SIM_GPS_DISABLE 1
+```
+
 
 ## 4. Turning off filters
 This is useful when you want to measure each filter's effect and performance.
