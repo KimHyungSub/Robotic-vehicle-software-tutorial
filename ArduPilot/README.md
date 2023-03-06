@@ -81,6 +81,8 @@ param set SIM_FLOW_DELAY 3
 
 ### 3-6. Magnetometer sensor
 ```
+param set SIM_MAG2_FAIL 1
+param set SIM_MAG3_FAIL 1
 param set SIM_MAG_RND 3
 ```
 
