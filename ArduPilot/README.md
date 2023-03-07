@@ -140,7 +140,7 @@ Reference: Paralyzing Drones via EMI Signal Injection on Sensory Communication C
 
 Turning off all sensors
 ```
-param set GYR_FAIL_MSK 1
+param set SIM_GYR_FAIL_MSK 1
 param set SIM_ACCEL1_FAIL 1
 param set SIM_ACCEL2_FAIL 1
 param set SIM_ACCEL3_FAIL 1
