@@ -138,7 +138,7 @@ param set SIM_GPS_GLITCH_Z 0.00001
 ### 3-9. EMI Signal Injection Attack
 Reference: Paralyzing Drones via EMI Signal Injection on Sensory Communication Channels, NDSS'23
 
-(Option 1) Turning off all sensors
+(Option 1) Turning off all sensors except for GNSS
 ```
 param set SIM_GYR_FAIL_MSK 1
 param set SIM_ACCEL1_FAIL 1
