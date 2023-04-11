@@ -158,9 +158,9 @@ param set SIM_GYR3_RND 700
 param set SIM_ACC1_RND 700
 param set SIM_ACC2_RND 700
 param set SIM_ACC3_RND 700
-param set SIM_BARO1_RND 700
-param set SIM_BARO2_RND 700
-param set SIM_BARO3_RND 700
+param set SIM_BARO_RND 700
+param set SIM_BAR2_RND 700
+param set SIM_BAR3_RND 700
 param set SIM_MAG_RND 700
 param set SIM_MAG2_FAIL 1
 param set SIM_MAG3_FAIL 1
