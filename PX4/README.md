@@ -106,22 +106,38 @@ make px4_sitl gazebo_cloudship
 ```
 
 ## 3. Injecting sensor noise in Gazebo simulation
+### 3-1. Add noises to gyroscopes
 
 Manually add noise into each sensor in <a href="https://github.com/PX4/PX4-SITL_gazebo/blob/5610c3fb441a2f3babc8ad7a63c8c4ce3e40abfa/src/gazebo_imu_plugin.cpp#L187" target="_blank">this file</a>
 
 This is an original code snippet. 
 ```
-gyroscope_bias_[i] = phi_g_d * gyroscope_bias_[i] +
+    gyroscope_bias_[i] = phi_g_d * gyroscope_bias_[i] +
         sigma_b_g_d * standard_normal_distribution_(random_generator_);
 ```
 This example code lines add noise into gyro sensors.
 ```
-gyroscope_bias_[i] = phi_g_d * gyroscope_bias_[i] +
-        sigma_b_g_d * standard_normal_distribution_(random_generator_) * 50;
+    gyroscope_bias_[i] = phi_g_d * gyroscope_bias_[i] +
+        sigma_b_g_d * standard_normal_distribution_(random_generator_) * 20;
 ```
 
 Q. Why should we modify PX4 source code to add noise? Is there any more easy way (e.g., changing configuration parameters)?<br>
 A. Unfortunately, PX4's failure injection is broken. <br>
+
+### 3-2. Add noises to accelerometers
+
+Manually add noise into each sensor in <a href="https://github.com/PX4/PX4-SITL_gazebo-classic/blob/5610c3fb441a2f3babc8ad7a63c8c4ce3e40abfa/src/gazebo_imu_plugin.cpp#L231" target="_blank">this file</a>
+
+This is an original code snippet. 
+```
+accelerometer_bias_[i] = phi_a_d * accelerometer_bias_[i] +
+        sigma_b_a_d * standard_normal_distribution_(random_generator_);
+```
+This example code lines add noise into gyro sensors.
+```
+accelerometer_bias_[i] = phi_a_d * accelerometer_bias_[i] +
+        sigma_b_a_d * standard_normal_distribution_(random_generator_) * 20;
+```
 
 ## 4. Leveraging an optical flow sensor
 ```
