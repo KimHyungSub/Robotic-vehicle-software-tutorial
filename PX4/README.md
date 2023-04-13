@@ -172,6 +172,19 @@ This example code lines add noise into magnetometer sensors.
 param set SIM_GPS_NOISE_X 10
 ```
 
+### 3-6. Add noises to an optical flow sensor
+Manually add noise into each sensor in <a href="https://github.com/PX4/PX4-SITL_gazebo-classic/blob/5610c3fb441a2f3babc8ad7a63c8c4ce3e40abfa/src/gazebo_opticalflow_plugin.cpp#L182" target="_blank">this file</a>
+
+This is an original code snippet. 
+```
+    opticalFlow_message.set_integrated_x(quality ? flow_x_ang : 0.0f);
+    opticalFlow_message.set_integrated_y(quality ? flow_y_ang : 0.0f);
+```
+This example code lines add noise into an optical flow.
+```
+    opticalFlow_message.set_integrated_x(quality ? flow_x_ang * 20 : 0.0f);
+    opticalFlow_message.set_integrated_y(quality ? flow_y_ang * 20 : 0.0f);
+```
 
 ## 4. Leveraging an optical flow sensor
 ```
