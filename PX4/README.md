@@ -115,7 +115,7 @@ This is an original code snippet.
     gyroscope_bias_[i] = phi_g_d * gyroscope_bias_[i] +
         sigma_b_g_d * standard_normal_distribution_(random_generator_);
 ```
-This example code lines add noise into gyro sensors.
+This example code lines add noise into gyroscope sensors.
 ```
     gyroscope_bias_[i] = phi_g_d * gyroscope_bias_[i] +
         sigma_b_g_d * standard_normal_distribution_(random_generator_) * 20;
@@ -133,10 +133,38 @@ This is an original code snippet.
 accelerometer_bias_[i] = phi_a_d * accelerometer_bias_[i] +
         sigma_b_a_d * standard_normal_distribution_(random_generator_);
 ```
-This example code lines add noise into gyro sensors.
+This example code lines add noise into accelerometer sensors.
 ```
 accelerometer_bias_[i] = phi_a_d * accelerometer_bias_[i] +
         sigma_b_a_d * standard_normal_distribution_(random_generator_) * 20;
+```
+
+### 3-3. Add noises to magnetometers
+
+Manually add noise into each sensor in <a href="https://github.com/PX4/PX4-SITL_gazebo-classic/blob/5610c3fb441a2f3babc8ad7a63c8c4ce3e40abfa/src/gazebo_magnetometer_plugin.cpp#L167" target="_blank">this file</a>
+
+This is an original code snippet. 
+```
+bias_[i] = phi_d * bias_[i] + sigma_b_d * standard_normal_distribution_(random_generator_);
+```
+This example code lines add noise into magnetometer sensors.
+```
+bias_[i] = phi_d * bias_[i] + sigma_b_d * standard_normal_distribution_(random_generator_) * 20;
+```
+
+### 3-4. Add noises to a barometer
+
+Manually add noise into each sensor in <a href="https://github.com/PX4/PX4-SITL_gazebo-classic/blob/5610c3fb441a2f3babc8ad7a63c8c4ce3e40abfa/src/gazebo_barometer_plugin.cpp#L182" target="_blank">this file</a>
+
+This is an original code snippet. 
+```
+    // Apply noise and drift
+    const float abs_pressure_noise = 1.0f * (float)y1;  // 1 Pa RMS noise
+```
+This example code lines add noise into magnetometer sensors.
+```
+    // Apply noise and drift
+    const float abs_pressure_noise = 1.0f * (float)y1 * 20;  // 1 Pa RMS noise
 ```
 
 ## 4. Leveraging an optical flow sensor
