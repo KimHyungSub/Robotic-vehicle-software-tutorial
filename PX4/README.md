@@ -167,6 +167,12 @@ This example code lines add noise into magnetometer sensors.
     const float abs_pressure_noise = 1.0f * (float)y1 * 20;  // 1 Pa RMS noise
 ```
 
+### 3-5. Add noises to GNSS
+```
+param set SIM_GPS_NOISE_X 10
+```
+
+
 ## 4. Leveraging an optical flow sensor
 ```
 cd [PX4 source folder]
