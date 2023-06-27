@@ -293,3 +293,10 @@ pip3 install --user jinja2
 ```
 sudo apt-get install libgstreamer-plugins-base1.0-dev
 ```
+
+### 6-5. CMake Error: Could not find a package configuration file provided by "MAVSDK" (requested version 1.3.1) with any of the following names
+```
+wget https://github.com/mavlink/MAVSDK/releases/download/v1.4.16/libmavsdk-dev_1.4.16_ubuntu20.04_amd64.deb
+sudo chmod 777 libmavsdk-dev_1.4.16_ubuntu20.04_amd64.deb
+sudo dpkg -i libmavsdk-dev_1.4.16_ubuntu20.04_amd64.deb
+```
