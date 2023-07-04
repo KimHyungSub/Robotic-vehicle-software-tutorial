@@ -300,3 +300,19 @@ wget https://github.com/mavlink/MAVSDK/releases/download/v1.4.16/libmavsdk-dev_1
 sudo chmod 777 libmavsdk-dev_1.4.16_ubuntu20.04_amd64.deb
 sudo dpkg -i libmavsdk-dev_1.4.16_ubuntu20.04_amd64.deb
 ```
+
+### 6-6. Waiting for simulator to accept connection on TCP port 4560
+Installing ant package
+```
+sudo apt install ant
+```
+
+### 6-7. Exception in thread "main" java.lang.reflect.InvocationTargetException
+```
+sudo vim /etc/java-8-openjdk/accessibility.properties
+```
+
+Commented out the following line:
+```
+#assistive_technologies=org.GNOME.Accessibility.AtkWrapper
+```
