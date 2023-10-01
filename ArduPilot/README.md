@@ -73,7 +73,7 @@ echo 'export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/gz_ws/src/ardupilot_gazebo/build:${
 echo 'export GZ_SIM_RESOURCE_PATH=$HOME/gz_ws/src/ardupilot_gazebo/models:$HOME/gz_ws/src/ardupilot_gazebo/worlds:${GZ_SIM_RESOURCE_PATH}' >> ~/.bashrc
 ```
 
-#### Run Gazebo simulator (Terminal 1)
+#### Run Gazebo simulator 
 ##### gz-garden
 Terminal 1
 ```
