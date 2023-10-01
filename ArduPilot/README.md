@@ -33,6 +33,34 @@ sudo apt update
 sudo apt-get install gazebo11 libgazebo11-dev
 ```
 
+#### Install the ArduPilot Gazebo Plugin
+```
+sudo apt update
+sudo apt install libgz-sim7-dev rapidjson-dev
+
+cd ~
+mkdir -p gz_ws/src && cd gz_ws/src
+git clone https://github.com/ArduPilot/ardupilot_gazebo
+
+cd ardupilot_gazebo
+mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
+make -j4
+```
+
+#### Configure the Gazebo environment
+In a terminal
+```
+export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/gz_ws/src/ardupilot_gazebo/build:$GZ_SIM_SYSTEM_PLUGIN_PATH
+export GZ_SIM_RESOURCE_PATH=$HOME/gz_ws/src/ardupilot_gazebo/models:$HOME/gz_ws/src/ardupilot_gazebo/worlds:$GZ_SIM_RESOURCE_PATH
+```
+
+In .bashrc or .zshrc
+```
+echo 'export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/gz_ws/src/ardupilot_gazebo/build:${GZ_SIM_SYSTEM_PLUGIN_PATH}' >> ~/.bashrc
+echo 'export GZ_SIM_RESOURCE_PATH=$HOME/gz_ws/src/ardupilot_gazebo/models:$HOME/gz_ws/src/ardupilot_gazebo/worlds:${GZ_SIM_RESOURCE_PATH}' >> ~/.bashrc
+```
+
 #### Run Gazebo simulator (Terminal 1)
 ```
 gazebo --verbose ~/ardupilot_gazebo/worlds/iris_arducopter_runway.world
