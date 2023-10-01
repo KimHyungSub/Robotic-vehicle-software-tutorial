@@ -24,8 +24,20 @@ Tools/environment_install/install-prereqs-ubuntu.sh -y
 ./Tools/autotest/sim_vehicle.py -v ArduCopter --console
 ```
 
-### 2-1. Gazebo
+### 2-2. Gazebo
 #### Install Gazebo simulator
+gz-garden (recommended version)
+```
+sudo apt-get update
+sudo apt-get install lsb-release wget gnupg
+
+sudo wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+sudo apt-get update
+sudo apt-get install gz-garden
+```
+
+gazebo-classic
 ```
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
