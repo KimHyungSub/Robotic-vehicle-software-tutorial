@@ -7,7 +7,7 @@ sudo apt-get install git
 sudo apt-get install gitk git-gui
 
 git clone https://github.com/ArduPilot/ardupilot.git ArduPilot
-CD ArduPilot
+cd ArduPilot
 git checkout [commit hash]
 git submodule update --init --recursive
 
