@@ -1,7 +1,7 @@
 # Robotic-vehicle-software-tutorial
 
 Hello! It is not straightforward to precisely manipulate robotic vehicles (RVs) on simulators when you especially want to simulate cyber-physical attacks/defense. <br>
-I will keep sharing how I run RV software on simulators. If you contribute to this tutorial, please create a pull request.<br>
+I will keep sharing how I run RV software on simulators. If you want to contribute to this tutorial, please create a pull request.<br>
 
 ## 1. Download and Setup
 ### 1-1 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#1-download-and-setup" target="_blank"> ArduPilot </a> (<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#2-1-sitl" target="_blank">SITL</a>, <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#2-2-gazebo" target="_blank">Gazebo</a>)
