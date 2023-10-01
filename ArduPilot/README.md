@@ -74,11 +74,24 @@ echo 'export GZ_SIM_RESOURCE_PATH=$HOME/gz_ws/src/ardupilot_gazebo/models:$HOME/
 ```
 
 #### Run Gazebo simulator (Terminal 1)
+##### gz-garden
+Terminal 1
+```
+gz sim -v4 -r iris_runway.sdf
+```
+
+Terminal 2
+```
+sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON --map --console
+```
+
+##### gazebo-classic 
+Terminal 1
 ```
 gazebo --verbose ~/ardupilot_gazebo/worlds/iris_arducopter_runway.world
 ```
 
-Open a new command window (Terminal 2)
+Terminal 2
 ```
 ./Tools/autotest/sim_vehicle.py -v ArduCopter -f gazebo-iris --console
 ```
