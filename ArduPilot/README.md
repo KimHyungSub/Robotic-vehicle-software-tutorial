@@ -82,7 +82,7 @@ gz sim -v4 -r iris_runway.sdf
 
 Terminal 2
 ```
-sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON --map --console
+./Tools/autotest/sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON --map --console
 ```
 
 ##### gazebo-classic 
