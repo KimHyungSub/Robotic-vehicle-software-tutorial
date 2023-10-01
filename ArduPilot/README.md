@@ -20,9 +20,31 @@ Tools/environment_install/install-prereqs-ubuntu.sh -y
 
 ## 2. Execute ArduPilot
 ### 2-1. SITL
+Copter
 ```
 ./Tools/autotest/sim_vehicle.py -v ArduCopter --console
 ```
+
+Plane
+```
+./Tools/autotest/sim_vehicle.py -v ArduPlane --console
+```
+
+Rover
+```
+./Tools/autotest/sim_vehicle.py -v Rover --console
+```
+
+Submarine
+```
+./Tools/autotest/sim_vehicle.py -v ArduSub --console
+```
+
+Key build options
+1) -c: do a make clean before building
+2) -G: use gdb for debugging ardupilot
+3) -w: wipe EEPROM and reload parameters
+
 
 ### 2-2. Gazebo
 #### Install Gazebo simulator
