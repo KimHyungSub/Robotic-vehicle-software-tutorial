@@ -55,6 +55,7 @@ I will keep sharing how I run RV software on simulators. If you contribute to th
 ### 3-4. Ground Control Station (GCS) Software
 
 #### 3-4-1. Installing QGroundControl 
+<img src="https://docs.qgroundcontrol.com/assets/quickstart/ConnectedVehicle.jpg" width="80%" height="80%">
 When your operating system is Ubuntu 20.04 (or later version), <br>
 ```
 sudo usermod -a -G dialout $USER
@@ -74,6 +75,7 @@ chmod +x ./QGroundControl.AppImage
 ./QGroundControl.AppImage  (or double click)
 ```
 #### 3-4-2. Installing Mission Planner on Ubuntu 20.04
+<img src="https://ardupilot.org/planner/_images/mission_planner_flight_data.jpg" width="80%" height="80%">
 Install dependecies <br>
 ```
 sudo apt install mono-runtime libmono-system-windows-forms4.0-cil libmono-system-core4.0-cil libmono-system-management4.0-cil libmono-system-xml-linq4.0-cil
