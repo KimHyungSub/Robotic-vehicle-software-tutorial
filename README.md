@@ -4,11 +4,11 @@ Hello! It is not straightforward to precisely manipulate RVs on simulators when 
 I will keep sharing how I run RV software on simulators. <br>
 
 ## 1. Download and Setup
-<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#1-download-and-setup" target="_blank"> ArduPilot </a>
-<br>
-<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#1-download-and-setup" target="_blank"> PX4 </a>
-<br>
-<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/paparazzi#1-quickstart-for-ubuntu-users" target="_blank"> Paparazzi </a>
+### 1-1 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#1-download-and-setup" target="_blank"> ArduPilot </a> (<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#2-1-sitl" target="_blank">SITL</a>, <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#2-2-gazebo" target="_blank">Gazebo</a>)
+
+### 1-2 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#1-download-and-setup" target="_blank"> PX4 </a> (<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#1-download-and-setup" target="_blank">jMAVSim</a>, <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#2-execute-px4-with-gazebo-simulator" target="_blank">Gazebo</a>)
+
+### 1-3 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/paparazzi#1-quickstart-for-ubuntu-users" target="_blank"> Paparazzi </a> (<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/paparazzi#2-2-compilation-and-demo-simulation" target="_blank">NPS</a>)
 
 ## 2. Execute control software
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#2-execute-ardupilot" target="_blank"> ArduPilot </a>
@@ -21,22 +21,34 @@ I will keep sharing how I run RV software on simulators. <br>
 ### 3-1. ArduPilot
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#3-injecting-sensor-noise" target="_blank"> Injecting sensor noise</a>
 <br>
+<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#4-turning-off-filters" target="_blank"> Turning off filters</a>
+<br>
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#4-leveraging-an-optical-flow-sensor" target="_blank"> Leveraging an optical flow sensor</a>
 <br>
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#5-testing-object-avoidance-algorithms" target="_blank"> Testing object avoidance algorithms</a>
 <br>
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#6-how-to-change-the-start-time-clock-timestamp" target="_blank"> Changing the start time clock (timestamp)</a>
+<br>
+<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/ArduPilot#8-troubleshooting" target="_blank"> Troubleshooting</a>
 
 ### 3-2. PX4
-<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#3-injecting-sensor-noise-in-gazebo-simulation" target="_blank"> Injecting sensor noise</a> 
+<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#3-injecting-sensor-noise-in-gazebo-simulation" target="_blank"> Injecting sensor noise in Gazebo simulation</a> 
 <br>
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#4-leveraging-an-optical-flow-sensor" target="_blank"> Leveraging an optical flow sensor</a> 
 <br>
+<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#5-deploying-px4-v1130-into-crazyflie-21" target="_blank"> Deploying PX4 v.1.13.0 into Crazyflie 2.1</a> 
+<br>
 <a href="https://github.com/KimHyungSub/mmWave_ROS2_PX4_Gazebo" target="_blank"> Simulating mmWave radar with ROS2 and PX4</a> 
+<br>
+<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/PX4#6-troubleshooting" target="_blank"> Troubleshooting</a>
 
-### 3-3. Ground Control Station (GCS) Software
+### 3-3. Paparazzi 
+<a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/paparazzi#3-simulating-sensor-attacks" target="_blank"> Simulating sensor attacks</a> 
+<br>
 
-#### 3-3-1. Installing QGroundControl 
+### 3-4. Ground Control Station (GCS) Software
+
+#### 3-4-1. Installing QGroundControl 
 When your operating system is Ubuntu 20.04 (or later version), <br>
 ```
 sudo usermod -a -G dialout $USER
@@ -55,7 +67,7 @@ Download <a href="https://github.com/mavlink/qgroundcontrol/releases/download/v3
 chmod +x ./QGroundControl.AppImage
 ./QGroundControl.AppImage  (or double click)
 ```
-#### 3-3-2. Installing Mission Planner on Ubuntu 20.04
+#### 3-4-2. Installing Mission Planner on Ubuntu 20.04
 Install dependecies <br>
 ```
 sudo apt install mono-runtime libmono-system-windows-forms4.0-cil libmono-system-core4.0-cil libmono-system-management4.0-cil libmono-system-xml-linq4.0-cil
