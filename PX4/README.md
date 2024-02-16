@@ -4,7 +4,7 @@
 ```
 git clone https://github.com/PX4/PX4-Autopilot.git PX4
 CD PX4
-git checkout [commit hash]
+git checkout [commit hash] // e.g., 6823cbc (v.1.13)
 git submodule update --init --recursive
 ./Tools/setup/ubuntu.sh -y
 ```
