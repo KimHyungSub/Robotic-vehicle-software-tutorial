@@ -176,8 +176,31 @@ This example code lines add noise into magnetometer sensors.
 ```
 
 ### 3-5. Add noises to GNSS
+Manually add noise into each sensor in <a href="https://github.com/PX4/PX4-SITL_gazebo-classic/blob/5610c3fb441a2f3babc8ad7a63c8c4ce3e40abfa/src/gazebo_gps_plugin.cpp#L264" target="_blank">this file</a>
+
+This is an original code snippet. 
 ```
-param set SIM_GPS_NOISE_X 10
+    noise_gps_pos_.X() = gps_xy_noise_density_ * sqrt(dt) * randn_(rand_);
+    noise_gps_pos_.Y() = gps_xy_noise_density_ * sqrt(dt) * randn_(rand_);
+    noise_gps_pos_.Z() = gps_z_noise_density_ * sqrt(dt) * randn_(rand_);
+    noise_gps_vel_.X() = gps_vxy_noise_density_ * sqrt(dt) * randn_(rand_);
+    noise_gps_vel_.Y() = gps_vxy_noise_density_ * sqrt(dt) * randn_(rand_);
+    noise_gps_vel_.Z() = gps_vz_noise_density_ * sqrt(dt) * randn_(rand_);
+    random_walk_gps_.X() = gps_xy_random_walk_ * sqrt(dt) * randn_(rand_);
+    random_walk_gps_.Y() = gps_xy_random_walk_ * sqrt(dt) * randn_(rand_);
+    random_walk_gps_.Z() = gps_z_random_walk_ * sqrt(dt) * randn_(rand_);
+```
+This example code lines add noise into magnetometer sensors.
+```
+    noise_gps_pos_.X() = gps_xy_noise_density_ * sqrt(dt) * randn_(rand_) * 60;
+    noise_gps_pos_.Y() = gps_xy_noise_density_ * sqrt(dt) * randn_(rand_) * 60;
+    noise_gps_pos_.Z() = gps_z_noise_density_ * sqrt(dt) * randn_(rand_) * 60;
+    noise_gps_vel_.X() = gps_vxy_noise_density_ * sqrt(dt) * randn_(rand_) * 60;
+    noise_gps_vel_.Y() = gps_vxy_noise_density_ * sqrt(dt) * randn_(rand_) * 60;
+    noise_gps_vel_.Z() = gps_vz_noise_density_ * sqrt(dt) * randn_(rand_) * 60;
+    random_walk_gps_.X() = gps_xy_random_walk_ * sqrt(dt) * randn_(rand_) * 60;
+    random_walk_gps_.Y() = gps_xy_random_walk_ * sqrt(dt) * randn_(rand_) * 60;
+    random_walk_gps_.Z() = gps_z_random_walk_ * sqrt(dt) * randn_(rand_) * 60;
 ```
 
 ### 3-6. Add noises to an optical flow sensor
