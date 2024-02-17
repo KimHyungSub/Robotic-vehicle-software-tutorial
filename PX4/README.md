@@ -114,6 +114,34 @@ make px4_sitl gazebo_cloudship
 ```
 
 ## 3. Injecting sensor noise in Gazebo simulation
+
+### Disable preflight checks for 'forced arming'
+This is an original code snippet in /src/modules/commander/Commander.cpp. 
+```
+transition_result_t Commander::arm(arm_disarm_reason_t calling_reason, bool run_preflight_checks)
+{
+        // allow a grace period for re-arming: preflight checks don't need to pass during that time, for example for accidential in-air disarming
+        if (calling_reason == arm_disarm_reason_t::rc_switch
+            && (hrt_elapsed_time(&_last_disarmed_timestamp) < 5_s)) {
+                run_preflight_checks = false;
+        }
+
+```
+
+This example code line disables preflight checks for 'forced arming'.
+```
+transition_result_t Commander::arm(arm_disarm_reason_t calling_reason, bool run_preflight_checks)
+{
+        run_preflight_checks = false;
+
+        // allow a grace period for re-arming: preflight checks don't need to pass during that time, for example for accidential in-air disarming
+        if (calling_reason == arm_disarm_reason_t::rc_switch
+            && (hrt_elapsed_time(&_last_disarmed_timestamp) < 5_s)) {
+                run_preflight_checks = false;
+        }
+
+```
+
 ### 3-1. Add noises to gyroscopes
 
 Manually add noise into each sensor in <a href="https://github.com/PX4/PX4-SITL_gazebo/blob/5610c3fb441a2f3babc8ad7a63c8c4ce3e40abfa/src/gazebo_imu_plugin.cpp#L187" target="_blank">this file</a>
