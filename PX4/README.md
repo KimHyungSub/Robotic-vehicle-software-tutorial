@@ -50,6 +50,14 @@ make px4_sitl gazebo
 make px4_sitl gazebo_iris_opt_flow
 ```
 
+
+Gazebo can be run in a headless mode in which the Gazebo UI is not launched. This starts up more quickly and uses less system resources (i.e. it is a more "lightweight" way to run the simulation).
+
+Simply prefix the normal make command with HEADLESS=1 as shown:
+```
+HEADLESS=1 make px4_sitl gazebo_iris_opt_flow
+```
+
 ### 2-3. 3DR Solo (Quadrotor)	
 ```
 make px4_sitl gazebo_solo
