@@ -154,7 +154,7 @@ This example code line disables preflight checks for 'forced arming'.
 ```
 		}
 
-		cmd_result = vehicle_command_ack_s::VEHICLE_CMD_RESULT_ACCEPTED;
+		cmd_result = 1;
 
 		break;
 
