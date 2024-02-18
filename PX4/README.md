@@ -142,6 +142,25 @@ transition_result_t Commander::arm(arm_disarm_reason_t calling_reason, bool run_
 
 ```
 
+This is an original code snippet in /src/modules/commander/Commander.cpp. 
+```
+		}
+		break;
+
+	case vehicle_command_s::VEHICLE_CMD_DO_FLIGHTTERMINATION: {
+```
+
+This example code line disables preflight checks for 'forced arming'.
+```
+		}
+
+		cmd_result = vehicle_command_ack_s::VEHICLE_CMD_RESULT_ACCEPTED;
+
+		break;
+
+	case vehicle_command_s::VEHICLE_CMD_DO_FLIGHTTERMINATION: {
+```
+
 ### 3-1. Add noises to gyroscopes
 
 Manually add noise into each sensor in <a href="https://github.com/PX4/PX4-SITL_gazebo/blob/5610c3fb441a2f3babc8ad7a63c8c4ce3e40abfa/src/gazebo_imu_plugin.cpp#L187" target="_blank">this file</a>
