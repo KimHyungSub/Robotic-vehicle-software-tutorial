@@ -30,7 +30,8 @@ and comment out the following line like this:
 
 ## 2. Execute PX4 with Gazebo simulator
 ### Takeoff position in the simulator
-The default starting position is Zurich Irchel Park (lat: 47.397742, lon: 8.545594, alt: 488.0).<br>
+In the case of **ground** and **aerial vehicles**, the default starting position is Zurich Irchel Park (lat: 47.397742, lon: 8.545594, alt: 488.0).<br>
+If the vehicle type is **underwater**, the default starting position is (lat: 47.3334475, lon: 8.5471141).<br>
 The takeoff location in SITL Gazebo can be set using environment variables. <br>
 ```
 export PX4_HOME_LAT=28.452386
