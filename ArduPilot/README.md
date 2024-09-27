@@ -55,7 +55,7 @@ Key build options
 
 ### 2-2. Gazebo
 #### Install Gazebo simulator
-gz-garden (recommended version)
+gz-garden 
 ```
 sudo apt-get update
 sudo apt-get install lsb-release wget gnupg
@@ -76,17 +76,18 @@ sudo apt-get install gazebo11 libgazebo11-dev
 
 #### Install the ArduPilot Gazebo Plugin
 ```
-sudo apt update
-sudo apt install libgz-sim7-dev rapidjson-dev
-
 cd ~
-mkdir -p gz_ws/src && cd gz_ws/src
-git clone https://github.com/ArduPilot/ardupilot_gazebo
+git clone https://github.com/khancyr/ardupilot_gazebo.git
 
 cd ardupilot_gazebo
-mkdir build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
+mkdir build
+cd build
+cmake ..
 make -j4
+sudo make install
+echo 'source /usr/share/gazebo/setup.sh' >> ~/.bashrc
+echo 'export GAZEBO_MODEL_PATH=~/ardupilot_gazebo/models' >> ~/.bashrc
+. ~/.bashrc
 ```
 
 #### Configure the Gazebo environment
