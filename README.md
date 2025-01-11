@@ -52,9 +52,41 @@ I will keep sharing how I run RV software on simulators. If you want to contribu
 <a href="https://github.com/KimHyungSub/Robotic-vehicle-software-tutorial/tree/main/paparazzi#3-simulating-sensor-attacks" target="_blank"> Simulating sensor attacks</a> 
 <br>
 
-### 3-4. Ground Control Station (GCS) Software
+### 3-4 Installing Pymavlink to manipulate vehicles by using Python
 
-#### 3-4-1. Installing QGroundControl 
+#### Ubuntu 20.04
+```
+sudo apt-get install gcc python-dev libxml2-dev libxslt-dev
+sudo apt-get install python-numpy python-pytest
+sudo apt install curl
+sudo apt install python2
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+sudo python2 get-pip.py
+sudo python2 -m pip install --upgrade future lxml
+
+git clone https://github.com/ArduPilot/mavlink.git
+cd mavlink
+git submodule update --init --recursive
+cd pymavlink
+sudo MDEF=`pwd`/../message_definitions python2 -m pip install . -v
+```
+
+#### Ubuntu 22.04
+```
+# Update list of available packages
+sudo apt update
+sudo apt -y upgrade
+
+# Install some dependencies
+sudo apt install -y python3-pip
+
+# Install mavproxy module and everything else needed
+pip3 install mavproxy
+```
+
+### 3-5. Ground Control Station (GCS) Software
+
+#### 3-5-1. Installing QGroundControl 
 <img src="https://docs.qgroundcontrol.com/assets/quickstart/ConnectedVehicle.jpg" width="80%" height="80%">
 When your operating system is Ubuntu 20.04 (or later version), <br>
 ```
@@ -74,7 +106,7 @@ Download <a href="https://github.com/mavlink/qgroundcontrol/releases/download/v3
 chmod +x ./QGroundControl.AppImage
 ./QGroundControl.AppImage  (or double click)
 ```
-#### 3-4-2. Installing Mission Planner on Ubuntu 20.04
+#### 3-5-2. Installing Mission Planner on Ubuntu 20.04
 <img src="https://ardupilot.org/planner/_images/mission_planner_flight_data.jpg" width="80%" height="80%">
 Install dependecies <br>
 ```
